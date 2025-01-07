@@ -18,7 +18,7 @@ const registerUser = asyncHandler(async(req, res) => {
 
     // 1.get user details from frontend
     const {fullName, email, username, password } = req.body
-    console.log("email: ", email);
+    // console.log("email: ", email);
  
     // 2.validation - not empty
     if (
@@ -47,7 +47,7 @@ const registerUser = asyncHandler(async(req, res) => {
     if( !avatarLocalPath){
         throw new ApiError(400, "Avatar file is required")
     }
-
+    console.log("yfgyftdtd")
     // 5.upload them to cloudinary, avatar
     const avatar = await uploadOnCloudinary(avatarLocalPath)
     const coverImage = await uploadOnCloudinary(coverImageLocalPath)
